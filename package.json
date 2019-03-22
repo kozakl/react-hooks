@@ -1,0 +1,41 @@
+{
+  "name": "@kozakl/hooks",
+  "version": "4.4.4",
+  "sideEffects": false,
+  "author": {
+    "name": "Luke Kozak",
+    "email": "kozakluke@gmail.com",
+    "url": "https://github.com/kozakl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kozakl/react-hooks"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "publish-dist": "npm run build && cp package.json ./dist && npm publish ./dist --access=public",
+    "test": "jest --coverage",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/src/.*.test)\\.tsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "^16.8.8",
+    "react": "^16.8.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.2",
+    "jest": "^20.0.4",
+    "ts-jest": "^22.4.2",
+    "typescript": "^3.2.1"
+  }
+}
