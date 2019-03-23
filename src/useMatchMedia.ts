@@ -8,8 +8,10 @@ export function useMatchMedia(query:string, change?:(event:MediaQueryListEvent)=
         media.addEventListener('change', onChange);
         
         function onChange(event:MediaQueryListEvent) {
-            change(event);
             setMatches(media.matches);
+            if (change) {
+                change(event);
+            }
         }
         return ()=>
             media.removeEventListener('change', onChange);
