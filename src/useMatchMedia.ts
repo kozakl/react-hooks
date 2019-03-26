@@ -12,7 +12,7 @@ export function useMatchMedia(query:string)
         }
         return ()=>
             media.removeEventListener('change', onChange);
-    }, []);
+    }, [query]);
     
     return matches;
 }
