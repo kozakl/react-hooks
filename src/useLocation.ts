@@ -8,7 +8,7 @@ export function useLocation()
         window.addEventListener('hashchange', onChange);
         
         function onChange() {
-            setLocation(window.location);
+            setLocation({...window.location});
         }
         return ()=>
             window.removeEventListener('hashchange', onChange);
