@@ -2,8 +2,8 @@ import {ChangeEvent, useState} from 'react';
 
 export function useTextFieldControl(initialValue:string,
                                     validator?:(value:string)=> boolean) {
-    const [value, setValue] = useState(initialValue);
-    const [error, setError] = useState();
+    const [value, setValue] = useState(initialValue),
+          [error, setError] = useState();
     return {
         value,
         error,
