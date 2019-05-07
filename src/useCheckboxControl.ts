@@ -2,8 +2,8 @@ import {useState} from 'react';
 
 export function useCheckboxControl(initialChecked:boolean)
 {
-    const [checked, setChecked] = useState(initialChecked);
-    const [error, setError] = useState();
+    const [checked, setChecked] = useState(initialChecked),
+          [error, setError] = useState();
     return {
         checked,
         error,
