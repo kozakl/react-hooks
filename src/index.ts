@@ -4,5 +4,6 @@ export * from './useInterval';
 export * from './useLocation';
 export * from './useMatchMedia';
 export * from './useResize';
+export * from './useTextField';
 export * from './useTextFieldControl';
 export * from './useVisibility';
