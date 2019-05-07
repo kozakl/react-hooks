@@ -3,4 +3,6 @@ export * from './useCheckboxUncheckedError';
 export * from './useInterval';
 export * from './useLocation';
 export * from './useMatchMedia';
+export * from './useResize';
 export * from './useTextFieldControl';
+export * from './useVisibility';
