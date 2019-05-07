@@ -1,8 +1,8 @@
-import {useEffect} from 'react';
+import {useLayoutEffect} from 'react';
 
 export function useResize(resize:()=> void, initCall?:boolean)
 {
-    useEffect(()=> {
+    useLayoutEffect(()=> {
         window.addEventListener('resize', resize);
         
         if (initCall) {
