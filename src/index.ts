@@ -1,3 +1,4 @@
+export * from './useCheckbox';
 export * from './useCheckboxControl';
 export * from './useCheckboxUncheckedError';
 export * from './useInterval';
