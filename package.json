@@ -1,6 +1,6 @@
 {
   "name": "@kozakl/hooks",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "sideEffects": false,
   "author": {
     "name": "Luke Kozak",
@@ -28,9 +28,9 @@
       "tsx"
     ]
   },
-  "dependencies": {
-    "@types/react": "^16.8.8",
-    "react": "^16.8.4"
+  "peerDependencies": {
+    "@types/react": "^16.8.17",
+    "react": "^16.8.6"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
