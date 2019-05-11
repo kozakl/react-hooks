@@ -8,4 +8,5 @@ export * from './useResize';
 export * from './useSelect';
 export * from './useTextField';
 export * from './useTextFieldControl';
+export * from './useTimeout';
 export * from './useVisibility';
