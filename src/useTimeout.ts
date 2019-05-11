@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 
-function useTimeout(callback:Function, timeout?:number,
-                                       ...deps:any) {
+export function useTimeout(callback:Function, timeout?:number,
+                                              ...deps:any) {
     const lastCallback = useRef<Function>();
     useEffect(()=> {
         lastCallback.current = callback;
