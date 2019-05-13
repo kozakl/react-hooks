@@ -12,7 +12,7 @@ export function useTimeout(callback:Function, timeout?:number,
             lastCallback.current();
         }
         if (timeout) {
-            let interval = setTimeout(onInterval, timeout);
+            const interval = setTimeout(onInterval, timeout);
             return ()=>
                 clearTimeout(interval);
         }
