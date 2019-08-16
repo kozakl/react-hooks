@@ -6,13 +6,13 @@ export function useMatchMedia(query:string)
     
     useEffect(()=> {
         const media = window.matchMedia(query);
-        media.addEventListener('change', onChange);
+        media.addListener(onChange);
         
         function onChange() {
             setMatches(media.matches);
         }
         return ()=>
-            media.removeEventListener('change', onChange);
+            media.removeListener(onChange);
     }, [query]);
     
     return matches;
