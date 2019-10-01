@@ -1,4 +1,5 @@
 export * from './useCheckbox';
+export * from './useFile';
 export * from './useInterval';
 export * from './useLocation';
 export * from './useMatchMedia';
