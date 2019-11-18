@@ -1,3 +1,4 @@
+export * from './useAsyncEffect';
 export * from './useCheckbox';
 export * from './useFile';
 export * from './useInterval';
