@@ -6,6 +6,7 @@ export * from './useInterval';
 export * from './useLocation';
 export * from './useMatchMedia';
 export * from './useResize';
+export * from './useScroll';
 export * from './useSelect';
 export * from './useTextField';
 export * from './useTimeout';
