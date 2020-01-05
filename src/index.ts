@@ -1,6 +1,7 @@
 export * from './useArray';
 export * from './useAsyncEffect';
 export * from './useCheckbox';
+export * from './useDocumentTitle';
 export * from './useFile';
 export * from './useInterval';
 export * from './useLocation';
