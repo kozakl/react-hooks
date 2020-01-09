@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-export function useMatchMedia(query:string)
+function useMatchMedia(change:(event:MediaQueryListEvent)=> void, query:string)
 {
     const [matches, setMatches] = useState(window.matchMedia(query).matches);
     
@@ -8,8 +8,11 @@ export function useMatchMedia(query:string)
         const media = window.matchMedia(query);
         media.addListener(onChange);
         
-        function onChange() {
+        function onChange(event:MediaQueryListEvent) {
             setMatches(media.matches);
+            if (change) {
+                change(event);
+            }
         }
         return ()=>
             media.removeListener(onChange);
