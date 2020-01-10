@@ -23,8 +23,7 @@ export function useScrollTarget(
                 });
             }
         }
-        return ()=> {
+        return ()=>
             target.current.removeEventListener('scroll', onScroll);
-        }
     }, []);
 }
