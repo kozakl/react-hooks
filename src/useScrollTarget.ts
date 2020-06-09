@@ -1,12 +1,12 @@
-import {MutableRefObject, useEffect} from 'react';
+import {useEffect} from 'react';
 
 export function useScrollTarget(
-    target:MutableRefObject<HTMLElement>,
+    target:HTMLElement,
     scroll:(value:number, dir?:number)=> void) {
     useEffect(()=> {
         let requestAnimation = true,
             lastScrollY = window.scrollY;
-        target.current.addEventListener('scroll', onScroll);
+        target.addEventListener('scroll', onScroll);
         
         onScroll();
         function onScroll() {
@@ -16,14 +16,14 @@ export function useScrollTarget(
                     requestAnimation = true;
                     
                     scroll(
-                        target.current.scrollTop,
-                        target.current.scrollTop > lastScrollY ? 1 : -1
+                        target.scrollTop,
+                        target.scrollTop > lastScrollY ? 1 : -1
                     );
-                    lastScrollY = target.current.scrollTop;
+                    lastScrollY = target.scrollTop;
                 });
             }
         }
         return ()=>
-            target.current.removeEventListener('scroll', onScroll);
+            target.removeEventListener('scroll', onScroll);
     }, []);
 }
