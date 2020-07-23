@@ -1,9 +1,9 @@
-import {MutableRefObject, useEffect} from 'react';
+import {MutableRefObject, useLayoutEffect} from 'react';
 
 export function useScrollTarget(
     target:MutableRefObject<HTMLElement>,
     scroll:(value:number, dir?:number)=> void) {
-    useEffect(()=> {
+    useLayoutEffect(()=> {
         let requestAnimation = true,
             lastScrollY = window.scrollY;
         target.current.addEventListener('scroll', onScroll);
@@ -24,6 +24,6 @@ export function useScrollTarget(
             }
         }
         return ()=>
-            target.current.removeEventListener('scroll', onScroll);
+            target.current?.removeEventListener('scroll', onScroll);
     }, []);
 }
