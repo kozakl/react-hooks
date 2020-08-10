@@ -10,6 +10,7 @@ export * from './useResize';
 export * from './useScroll';
 export * from './useScrollTarget';
 export * from './useSelect';
+export * from './useTextArea';
 export * from './useTextField';
 export * from './useTimeout';
 export * from './useVisibility';
