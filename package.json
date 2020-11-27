@@ -28,6 +28,12 @@
       "tsx"
     ]
   },
+  "dependencies": {
+    "@types/draft-js": "^0.10.44",
+    "@types/draftjs-to-html": "^0.8.0",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1"
+  },
   "peerDependencies": {
     "@types/react": "^16.8.17",
     "react": "^16.8.6"
