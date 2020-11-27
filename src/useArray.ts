@@ -3,8 +3,8 @@ import {useState} from 'react';
 export function useArray<T>(initialValue:Array<T>)
 {
     const [value, setValue] = useState(initialValue),
-          [changed, setChanged] = useState(),
-          [error, setError] = useState();
+          [changed, setChanged] = useState(false),
+          [error, setError] = useState(null);
     return {
         value,
         changed,

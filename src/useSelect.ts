@@ -3,8 +3,8 @@ import {ChangeEvent, useState} from 'react';
 export function useSelect(initialValue:number)
 {
     const [value, setValue] = useState(initialValue),
-          [changed, setChanged] = useState(),
-          [error, setError] = useState();
+          [changed, setChanged] = useState(false),
+          [error, setError] = useState(null);
     return {
         value,
         changed,
