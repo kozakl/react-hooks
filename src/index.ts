@@ -7,6 +7,7 @@ export * from './useInterval';
 export * from './useLocation';
 export * from './useMatchMedia';
 export * from './useResize';
+export * from './useRichTextArea';
 export * from './useScroll';
 export * from './useScrollTarget';
 export * from './useSelect';
