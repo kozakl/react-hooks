@@ -3,8 +3,8 @@ import {ChangeEvent, useState} from 'react';
 export function useFile()
 {
     const [files, setFiles] = useState<FileList>(),
-          [changed, setChanged] = useState(),
-          [error, setError] = useState();
+          [changed, setChanged] = useState(false),
+          [error, setError] = useState(null);
     return {
         files,
         changed,

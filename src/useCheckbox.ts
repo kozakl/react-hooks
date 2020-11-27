@@ -3,8 +3,8 @@ import {ChangeEvent, useState} from 'react';
 export function useCheckbox(initialChecked:boolean)
 {
     const [checked, setChecked] = useState(initialChecked),
-          [changed, setChanged] = useState(),
-          [error, setError] = useState();
+          [changed, setChanged] = useState(false),
+          [error, setError] = useState(null);
     return {
         checked,
         changed,
