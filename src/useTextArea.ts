@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from 'react';
 
 export function useTextArea(initialValue:string,
-                             validator?:(value:string)=> boolean) {
+                            validator?:(value:string)=> boolean) {
     const [value, setValue] = useState(initialValue),
           [changed, setChanged] = useState(),
           [error, setError] = useState();
