@@ -24,6 +24,8 @@ export function useRichTextArea(initialValue:string) {
         setError: (error:string)=>
             setError(error),
         getValue: ()=>
-            draftToHtml(convertToRaw(state.getCurrentContent()))
+            draftToHtml(convertToRaw(state.getCurrentContent())),
+        hasText: ()=>
+            state.getCurrentContent().hasText()
     }
 }
