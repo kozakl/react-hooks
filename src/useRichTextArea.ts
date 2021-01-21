@@ -7,9 +7,7 @@ export function useRichTextArea(initialValue:string) {
     const [state, setState] = useState(
         EditorState.createWithContent(
             ContentState.createFromBlockArray(
-                convertFromHTML(initialValue) as any
-            )
-        )
+                convertFromHTML(initialValue) as any))
     );
     const [changed, setChanged] = useState(false),
           [error, setError] = useState(null);
@@ -21,6 +19,12 @@ export function useRichTextArea(initialValue:string) {
             setState(state);
             setChanged(true);
         },
+        setState: (value:string)=>
+            setState(
+                EditorState.createWithContent(
+                    ContentState.createFromBlockArray(
+                        convertFromHTML(value) as any))
+            ),
         setError: (error:string)=>
             setError(error),
         getValue: ()=>
