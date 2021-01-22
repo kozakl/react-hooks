@@ -8,6 +8,7 @@ export function useFile()
     return {
         files,
         changed,
+        setChanged,
         error,
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             setFiles(event.target.files);
