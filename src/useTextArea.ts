@@ -8,6 +8,7 @@ export function useTextArea(initialValue:string,
     return {
         value,
         changed,
+        setChanged,
         error,
         onChange: (event:ChangeEvent<HTMLTextAreaElement>)=> {
             if (validator) {
