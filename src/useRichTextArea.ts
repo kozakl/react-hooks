@@ -14,6 +14,7 @@ export function useRichTextArea(initialValue:string) {
     return {
         state,
         changed,
+        setChanged,
         error,
         onChange: (state:EditorState)=> {
             setState(state);

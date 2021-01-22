@@ -8,6 +8,7 @@ export function useSelect(initialValue:number)
     return {
         value,
         changed,
+        setChanged,
         error,
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             setValue(+event.target.value);

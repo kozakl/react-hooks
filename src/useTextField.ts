@@ -8,6 +8,7 @@ export function useTextField(initialValue:string,
     return {
         value,
         changed,
+        setChanged,
         error,
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             if (validator) {
