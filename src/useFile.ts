@@ -3,7 +3,7 @@ import {ChangeEvent, useRef,
 
 export function useFile()
 {
-    const ref = useRef();
+    const ref = useRef<HTMLInputElement>();
     const [files, setFiles] = useState<FileList>(),
           [changed, setChanged] = useState(false),
           [error, setError] = useState(null);
