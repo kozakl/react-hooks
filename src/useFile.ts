@@ -1,11 +1,14 @@
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent, useRef,
+        useState} from 'react';
 
 export function useFile()
 {
+    const ref = useRef();
     const [files, setFiles] = useState<FileList>(),
           [changed, setChanged] = useState(false),
           [error, setError] = useState(null);
     return {
+        ref,
         files,
         changed,
         setChanged,
