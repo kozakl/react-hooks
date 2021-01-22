@@ -8,6 +8,7 @@ export function useCheckbox(initialChecked:boolean)
     return {
         checked,
         changed,
+        setChanged,
         error,
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             setChecked(!checked);
