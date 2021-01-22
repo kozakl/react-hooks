@@ -8,6 +8,7 @@ export function useArray<T>(initialValue:Array<T>)
     return {
         value,
         changed,
+        setChanged,
         error,
         add: (element:T)=> {
             value.push(element);
