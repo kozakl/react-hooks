@@ -13,6 +13,7 @@ export function useTextField(initialValue:string = '',
         setChanged,
         error,
         setError,
+        getValue: ()=> value,
         isEmpty: ()=>
             !isFill(value),
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
