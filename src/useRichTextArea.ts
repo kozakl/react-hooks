@@ -26,7 +26,7 @@ export function useRichTextArea(initialValue:string = '') {
         getValue: ()=>
             draftToHtml(convertToRaw(value.getCurrentContent())),
         isEmpty: ()=>
-            value.getCurrentContent().hasText(),
+            !value.getCurrentContent().hasText(),
         onChange: (state:EditorState)=> {
             setValue(state);
             setChanged(true);
