@@ -27,16 +27,5 @@ export function useArray<T>(initialValue:Array<T>)
             ]);
             setChanged(value.toString() !== initialValue.toString());
         },
-        set: (index:number, element:T)=> {
-            value[index] = element;
-            setValue([...value]);
-            setChanged(value.toString() !== initialValue.toString());
-        },
-        setValue: (value:Array<T>)=> {
-            setValue(value);
-            setChanged(value.toString() !== initialValue.toString());
-        },
-        setError: (error:string)=> setError(error),
-        get: (index:number)=> value[index]
     }
 }
