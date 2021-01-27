@@ -1,4 +1,5 @@
 import {ChangeEvent, useState} from 'react';
+import {isFill} from '@kozakl/utils/validate';
 
 export function useTextField(initialValue:string,
                              validator?:(value:string)=> boolean) {
@@ -12,6 +13,8 @@ export function useTextField(initialValue:string,
         setChanged,
         error,
         setError,
+        isEmpty: ()=>
+            !isFill(value),
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             if (validator) {
                 if (validator(event.target.value)) {
