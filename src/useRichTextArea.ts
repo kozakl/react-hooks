@@ -4,7 +4,7 @@ import {ContentState, convertFromHTML,
 import {default as draftToHtml} from 'draftjs-to-html';
 
 export function useRichTextArea(initialValue:string = '') {
-    const [value, setValue] = useState(
+    const [state, setState] = useState(
         EditorState.createWithContent(
             ContentState.createFromBlockArray(
                 convertFromHTML(initialValue) as any))
@@ -12,23 +12,23 @@ export function useRichTextArea(initialValue:string = '') {
     const [changed, setChanged] = useState(false),
           [error, setError] = useState(null);
     return {
-        value,
+        state,
         changed,
         setChanged,
         error,
         setError,
         setValue: (value:string)=>
-            setValue(
+            setState(
                 EditorState.createWithContent(
                     ContentState.createFromBlockArray(
                         convertFromHTML(value) as any))
             ),
         getValue: ()=>
-            draftToHtml(convertToRaw(value.getCurrentContent())),
+            draftToHtml(convertToRaw(state.getCurrentContent())),
         isEmpty: ()=>
-            !value.getCurrentContent().hasText(),
+            !state.getCurrentContent().hasText(),
         onChange: (state:EditorState)=> {
-            setValue(state);
+            setState(state);
             setChanged(true);
         }
     }
