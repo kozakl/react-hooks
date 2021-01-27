@@ -4,12 +4,14 @@ export function useTextField(initialValue:string,
                              validator?:(value:string)=> boolean) {
     const [value, setValue] = useState(initialValue),
           [changed, setChanged] = useState(false),
-          [error, setError] = useState(null);
+          [error, setError] = useState<string>(null);
     return {
         value,
+        setValue,
         changed,
         setChanged,
         error,
+        setError,
         onChange: (event:ChangeEvent<HTMLInputElement>)=> {
             if (validator) {
                 if (validator(event.target.value)) {
@@ -19,7 +21,6 @@ export function useTextField(initialValue:string,
                 setValue(event.target.value);
             }
             setChanged(initialValue !== event.target.value);
-        },
-        setError: (error:string)=> setError(error)
+        }
     }
 }
