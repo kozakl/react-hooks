@@ -1,6 +1,6 @@
 {
   "name": "@kozakl/hooks",
-  "version": "2.17.1",
+  "version": "2.17.2",
   "sideEffects": false,
   "author": {
     "name": "Luke Kozak",
@@ -36,8 +36,8 @@
     "draftjs-to-html": "^0.9.1"
   },
   "peerDependencies": {
-    "@types/react": "^16.8.17",
-    "react": "^16.8.6"
+    "@types/react": "^17.0.0",
+    "react": "^17.0.0"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
