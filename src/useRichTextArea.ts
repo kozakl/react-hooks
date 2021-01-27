@@ -12,6 +12,7 @@ export function useRichTextArea(initialValue:string = '') {
     const [changed, setChanged] = useState(false),
           [error, setError] = useState(null);
     return {
+        value,
         changed,
         setChanged,
         error,
