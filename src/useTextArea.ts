@@ -1,4 +1,5 @@
 import {ChangeEvent, useState} from 'react';
+import {isFill} from '@kozakl/utils/validate';
 
 export function useTextArea(initialValue:string,
                             validator?:(value:string)=> boolean) {
@@ -7,9 +8,14 @@ export function useTextArea(initialValue:string,
           [error, setError] = useState(null);
     return {
         value,
+        setValue,
         changed,
         setChanged,
         error,
+        setError,
+        getValue: ()=> value,
+        isEmpty: ()=>
+            !isFill(value),
         onChange: (event:ChangeEvent<HTMLTextAreaElement>)=> {
             if (validator) {
                 if (validator(event.target.value)) {
@@ -19,7 +25,6 @@ export function useTextArea(initialValue:string,
                 setValue(event.target.value);
             }
             setChanged(initialValue !== event.target.value);
-        },
-        setError: (error:string)=> setError(error)
+        }
     }
 }
