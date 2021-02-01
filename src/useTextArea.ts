@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from 'react';
 import {isFill} from '@kozakl/utils/validate';
 
-export function useTextArea(initialValue:string,
+export function useTextArea(initialValue:string = '',
                             validator?:(value:string)=> boolean) {
     const [value, setValue] = useState(initialValue),
           [changed, setChanged] = useState(false),
