@@ -10,6 +10,7 @@ export function useArray<T>(initialValue:Array<T>)
         changed,
         setChanged,
         error,
+        setError,
         add: (element:T)=> {
             value.push(element);
             setValue(value);
