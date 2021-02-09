@@ -11,6 +11,17 @@ export function useArray<T>(initialValue:Array<T>)
         setChanged,
         error,
         setError,
+        get: (index:number)=>
+            value[index],
+        set: (index:number, element:T)=> {
+            value[index] = element;
+            setValue([...value]);
+            setChanged(value.toString() !== initialValue.toString());
+        },
+        setValue: (value:Array<T>)=> {
+            setValue(value);
+            setChanged(value.toString() !== initialValue.toString());
+        },
         add: (element:T)=> {
             value.push(element);
             setValue(value);
@@ -27,6 +38,6 @@ export function useArray<T>(initialValue:Array<T>)
                 ...value.slice(index + 1)
             ]);
             setChanged(value.toString() !== initialValue.toString());
-        },
+        }
     }
 }
