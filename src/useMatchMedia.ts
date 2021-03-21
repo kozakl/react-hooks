@@ -2,7 +2,10 @@ import {useEffect, useState} from 'react';
 
 export function useMatchMedia(change:(media:MediaQueryList)=> void, query:string)
 {
-    const [matches, setMatches] = useState(window.matchMedia(query).matches);
+    const [matches, setMatches] = useState(
+        typeof window !== 'undefined' &&
+            window.matchMedia(query).matches
+    );
     
     useEffect(()=> {
         const media = window.matchMedia(query);
