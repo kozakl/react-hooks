@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useLayoutEffect, useState} from 'react';
 
 export function useMatchMedia(change:(media:MediaQueryList)=> void, query:string)
 {
@@ -7,7 +7,7 @@ export function useMatchMedia(change:(media:MediaQueryList)=> void, query:string
             window.matchMedia(query).matches
     );
     
-    useEffect(()=> {
+    useLayoutEffect(()=> {
         const media = window.matchMedia(query);
         media.addListener(onChange);
         
