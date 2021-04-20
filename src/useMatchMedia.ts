@@ -1,4 +1,5 @@
-import {useLayoutEffect, useState} from 'react';
+import {useState} from 'react';
+import {useIsomorphicLayoutEffect} from './useIsomorphicLayoutEffect';
 
 export function useMatchMedia(change:(media:MediaQueryList)=> void, query:string)
 {
@@ -7,7 +8,7 @@ export function useMatchMedia(change:(media:MediaQueryList)=> void, query:string
             window.matchMedia(query).matches
     );
     
-    useLayoutEffect(()=> {
+    useIsomorphicLayoutEffect(()=> {
         const media = window.matchMedia(query);
         media.addListener(onChange);
         
