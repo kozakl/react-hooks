@@ -4,6 +4,7 @@ export * from './useCheckbox';
 export * from './useDocumentTitle';
 export * from './useFile';
 export * from './useInterval';
+export * from './useIsomorphicLayoutEffect';
 export * from './useLocation';
 export * from './useMatchMedia';
 export * from './useResize';
